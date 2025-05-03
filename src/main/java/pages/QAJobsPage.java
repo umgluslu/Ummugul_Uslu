@@ -46,7 +46,7 @@ public class QAJobsPage extends BaseMethod {
             }
         } catch (Exception e) {
             // Hata loglamak istersen:
-            // test.log(Status.INFO, "Buton henüz görünür değil: " + e.getMessage());
+            // test.xml.log(Status.INFO, "Buton henüz görünür değil: " + e.getMessage());
         }
         // Sayfayı aşağıya kaydır
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 200);");
@@ -175,7 +175,7 @@ waitForSeconds(5);
                 }
 
             } catch (Exception e) {
-                // test.log(Status.INFO, "Deneme başarısız: " + e.getMessage());
+                // test.xml.log(Status.INFO, "Deneme başarısız: " + e.getMessage());
             }
 
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 200);");
@@ -216,7 +216,7 @@ waitForSeconds(5);
                 }
 
             } catch (Exception e) {
-                // test.log(Status.INFO, "Deneme başarısız: " + e.getMessage());
+                // test.xml.log(Status.INFO, "Deneme başarısız: " + e.getMessage());
             }
 
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 200);");

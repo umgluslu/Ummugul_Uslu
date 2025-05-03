@@ -10,7 +10,7 @@ public class ExtentReportManager {
 
     public static ExtentReports getInstance() {
         if (extent == null) {
-            String reportPath = System.getProperty("user.dir") + "/test-output/ExtentReport.html";
+            String reportPath = System.getProperty("user.dir") + "/test.xml-output/ExtentReport.html";
 
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportPath);
             htmlReporter.config().setDocumentTitle("Test Results");

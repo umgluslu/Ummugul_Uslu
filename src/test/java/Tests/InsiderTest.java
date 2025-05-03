@@ -1,4 +1,4 @@
-package tests;
+package Tests;
 
 import pages.CareersPage;
 import pages.QAJobsPage;
