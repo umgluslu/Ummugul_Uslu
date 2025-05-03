@@ -76,12 +76,12 @@ waitForSeconds(5);
 
                 for (WebElement option : options) {
                     String text = option.getText().trim();
-                    actions.moveToElement(option).perform(); // 👈 Mouse ile üzerine git
+                    actions.moveToElement(option).perform(); //  Mouse ile üzerine git
                     Thread.sleep(300); // Hover yüklemeyi tetikler
 
                     if (text.equalsIgnoreCase("Istanbul, Turkiye")) {
-                        actions.moveToElement(option).click().perform(); // 👈 Hover + Click
-                        test.log(Status.INFO, "📍 'Istanbul, Turkey' mouse ile seçildi.");
+                        actions.moveToElement(option).click().perform(); //  Hover + Click
+                        test.log(Status.INFO, " 'Istanbul, Turkey' mouse ile seçildi.");
                         found = true;
                         break;
                     }
@@ -119,12 +119,12 @@ waitForSeconds(5);
 
                 for (WebElement option : options) {
                     String text = option.getText().trim();
-                    actions.moveToElement(option).perform(); // 👈 Mouse ile üzerine git
+                    actions.moveToElement(option).perform(); //  Mouse ile üzerine git
                     Thread.sleep(300); // Hover yüklemeyi tetikler
 
                     if (text.equalsIgnoreCase("Quality Assurance")) {
-                        actions.moveToElement(option).click().perform(); // 👈 Hover + Click
-                        test.log(Status.INFO, "🏢 'Quality Assurance' mouse ile seçildi.");
+                        actions.moveToElement(option).click().perform(); //  Hover + Click
+                        test.log(Status.INFO, " 'Quality Assurance' mouse ile seçildi.");
                         found = true;
                         break;
                     }

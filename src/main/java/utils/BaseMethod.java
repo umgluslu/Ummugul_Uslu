@@ -70,13 +70,13 @@ public class BaseMethod {
     }
 
     protected void scrollToBottomThenScrollUpUntilVisible(By locator, int maxTries) {
-        // 🔽 1. Sayfanın en altına in — tüm içerikler yüklensin
+        //   Sayfanın en altına in — tüm içerikler yükle
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
         try {
             Thread.sleep(2000); // Lazy load için bekle
         } catch (InterruptedException ignored) {}
 
-        // 🔼 2. Şimdi yukarı çık ve elementi görünür yap
+        //   Şimdi yukarı çık ve elementi görünür yap
         int scrolls = 0;
         while (scrolls < maxTries) {
             try {
@@ -162,7 +162,7 @@ public class BaseMethod {
             try {
                 WebElement element = driver.findElement(locator);
                 if (element.isDisplayed() && element.getSize().getHeight() > 0) {
-                    // 👇 Elementi tam ortalamaya çalış
+                    //  Elementi tam ortalamaya çalış
                     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", element);
                     Thread.sleep(500);
                     test.log(Status.INFO, "✅ Element görünür oldu: " + locator);
@@ -170,7 +170,7 @@ public class BaseMethod {
                 }
             } catch (Exception ignored) {}
 
-            // 👇 Her scroll döngüsünde biraz aşağı kaydır
+            //  Her scroll döngüsünde biraz aşağı kaydır
             ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 300);");
             scrolls++;
             try { Thread.sleep(400); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
@@ -181,9 +181,9 @@ public class BaseMethod {
     }
     protected void scrollAndHover(By locator) {
         try {
-            WebElement element = scrollUntilVisible(locator, 15);  // 👈 önce scroll yap
+            WebElement element = scrollUntilVisible(locator, 15);  //  önce scroll yap
             Actions actions = new Actions(driver);
-            actions.moveToElement(element).perform();              // 👈 sonra hover yap
+            actions.moveToElement(element).perform();              //  sonra hover yap
             test.log(Status.INFO, "✅ Scroll + Hover başarıyla yapıldı: " + locator);
         } catch (Exception e) {
             test.log(Status.FAIL, "❌ Scroll veya Hover başarısız: " + e.getMessage());
